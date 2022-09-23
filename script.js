@@ -102,6 +102,8 @@ class cardsGame {
 
     victory(){
         clearInterval(this.contador);
+        let intentosTotales = document.getElementById('intentosTotales');
+        intentosTotales.innerText = this.clicksTotales;
         document.getElementById('victory-text').classList.add('visible');
     }
 
@@ -152,7 +154,7 @@ const fetchData = async () => {
         });
 
         // Crear juego
-        let juego = new cardsGame(300, cards)
+        let juego = new cardsGame(600, cards)
         
     } catch (error) {
         console.log('ERROR - Error al cargar el contenido');
