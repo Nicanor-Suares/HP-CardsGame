@@ -154,7 +154,7 @@ const fetchData = async () => {
         });
 
         // Crear juego
-        let juego = new cardsGame(600, cards)
+        let juego = new cardsGame(300, cards)
         
     } catch (error) {
         console.log('ERROR - Error al cargar el contenido');
