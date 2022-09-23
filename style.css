@@ -1,0 +1,160 @@
+@font-face {
+    font-family: 'harry_pregular';
+    src: url('harryp__-webfont.woff2') format('woff2'),
+         url('harryp__-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    min-height: 100vh;
+}
+
+body{
+    margin: 0;        
+    background:radial-gradient(#b13e3d, #3f1716);
+    cursor: pointer;
+}
+
+h1{
+    font-family:'harry_pregular';
+    text-align: center;
+    color: #fd5857;
+    background: -webkit-linear-gradient(#b03d3c, #fd5857);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 5rem;
+}
+
+.info-juego{
+    color: #b19965;
+    font-size: 3rem;
+    font-family: 'harry_pregular';
+}
+
+.container-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.overlay-text {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: #b19965;
+    font-family: 'harry_pregular';    
+    visibility: hidden;
+}
+
+.overlay-text-small {
+    font-size: .3em;
+}
+
+.overlay-text.visible {
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    animation: overlay-grow 500ms forwards;
+    cursor: pointer;
+}
+
+@keyframes overlay-grow {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0;
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.8);
+        font-size: 10em;
+    }
+}
+
+.container-juego {
+    
+}
+
+.carta {
+    position: relative;
+    background-color: #451c16;
+    height: 17rem;
+    width: 14rem;
+}
+
+#cartas {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 15px;
+    margin: 50px;
+    justify-content: center;
+    perspective: 500px;
+}
+
+.carta-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transition: 0.2s ease;
+    transition: transform 400ms ease-in-out;
+}
+
+.carta.visible .carta-back{
+    transform: rotateY(-180deg);
+}
+
+.carta.visible .carta-front {
+    transform: rotateY(0);
+}
+
+.carta.matched .carta-front {
+    transform: rotateY(0);
+}
+
+.img-back {
+    position: absolute;
+    width: 14rem;
+    height: 17rem;
+}
+
+.carta-front {
+    transform: rotateY(180deg);
+}
+
+.img-personaje {
+    position: absolute;
+    width: 95%;
+    height: 95%;
+}
+
+.nombre-personaje {
+    background-color: white;
+    padding: 10px;
+    font-size: 18px;
+    position: absolute;
+    text-align: center;
+    background-color: #451c16;
+    color: #b19965;
+    width: 100%;
+    bottom: -2.0rem;
+}
+
+.carta-face:hover {
+    box-shadow: 0px 0px 10px #fd5857;
+    transition: 0.2s ease;
+}

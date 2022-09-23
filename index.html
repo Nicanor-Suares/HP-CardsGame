@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+    <title>Memory Game</title>
+</head>
+<body>
+    <h1 class="title">Obliviate - Memory cards game</h1>
+
+    <div class="overlay-text visible">
+        Click Para Empezar
+    </div>
+    <div id="game-over-text" class="overlay-text">
+        Juego Terminado
+        <span class="overlay-text-small">Click Para Volver a Empezar</span>
+    </div>
+    <div id="victory-text" class="overlay-text">
+        Has Ganado
+            <span class="overlay-text-small">Click Para Volver a Empezar</span>
+            <span class="overlay-text-small" id="intentosTotales">intentos:</span>
+    </div>
+
+    <div class="container-juego">
+        <div class="container-info">
+            <div class="info-juego">
+                Tiempo: <span id="tiempo">5:00</span>                
+            </div>
+            <div class="info-juego">
+                Intentos: <span id="intentos">0</span>                
+            </div>
+        </div>
+        
+        <div id="cartas">
+        </div>
+        
+    </div>
+
+    <template id="cartas-template">
+        <div class="carta">
+            <div class="carta-back carta-face">
+                <img src="img/il_794xN.3587959250_ibm4.jpg" class="img-back">
+            </div>
+            <div class="carta-front carta-face">
+                <img src="" class="img-personaje">
+                <h5 class="nombre-personaje"></h5>
+            </div>
+        </div>
+    </template>
+
+</body>
+</html>
