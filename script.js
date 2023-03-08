@@ -123,7 +123,7 @@ const fetchData = async () => {
     try {
 
         //traer info de api HP
-        const res = await fetch('http://hp-api.herokuapp.com/api/characters');
+        const res = await fetch('https://hp-api.onrender.com/api/characters');
         const data = await res.json();
 
         //Filtrar cartas con imágenes, duplicar y desordenar
